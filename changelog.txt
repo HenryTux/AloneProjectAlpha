@@ -1,0 +1,23 @@
+v0.1
+
+-Three options available on menu
+-Shows Title from title.txt
+-Shows About from about.txt
+-Lowercase and uppercase are accepted on input string
+-When typing more than one char, menu shows up
+-If a valid char is typed, followed by another valid char, the program will execute both actions
+-Main game and demo game are not available on this version
+
+v0.2
+
+-Input strings are now checked
+-(Fixed)"If a valid char is typed, followed by another valid char, the program will execute both actions"v1.0.0
+-Exiting from game is now verified(Work in progress)
+-"bool fexit(bool exit);" function has been added
+-Main game and demo game are not available on this version(Demo under development)
+
+v0.3
+
+-New option selection feature has been implemented
+-Now the user is able to hightlight any option with up and down arrow keys! (Work in progress)
+-Main game and demo game are not available on this version(Demo under development)

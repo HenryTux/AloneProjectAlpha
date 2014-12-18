@@ -7,22 +7,13 @@ using namespace std;
 #include <cctype>
 #include <windows.h>
 
-void menu();
 void title();
 void about();
 
 int main(){
-	menu();
-	system("CLS");
-	cout << "Thanks for playing! See you soon :)\n";
-	system("pause");
-	return 0;
-}
-void menu(){
 	string Menu[3] = {"PLAY DEMO", "ABOUT", "EXIT"};
-	bool exitmenu = false;
 	int aux = 0, menuspeed = 100;
-	while(!exitmenu){
+	while(true){
 		system("CLS");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 		/*+ info: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686047(v=vs.85).aspx
@@ -37,38 +28,34 @@ void menu(){
 				cout << Menu[i] << endl;
 			}
 		}
-		while(!exitmenu){
+		while(true){
 			if(GetAsyncKeyState(VK_UP) != 0){
 			/*+info: http://msdn.microsoft.com/es-es/library/windows/desktop/ms646293%28v=vs.85%29.aspx*/
 				aux -= 1;
-				switch(aux){
-					case -1:{
-						aux = 2;
-					}
-				}
+				if(aux == -1)aux = 2;
+				break;
 			}else if (GetAsyncKeyState(VK_DOWN) != 0){
 				aux += 1;
-				switch(aux){
-					case 3:{
-						aux = 0;
-					}
-				}
+				if(aux == 3)aux = 0;break;
 			}else if (GetAsyncKeyState(VK_RETURN) != 0){
 				switch(aux){
 					case 0:{
 						system("CLS");
 						cout << "Game should start here...\n";
 						system("pause");
-						menu();
+						main();
 					}break;
 					case 1:{
 						system("CLS");
 						about();
 						system("pause");
-						menu();
+						main();
 					}break;
 					case 2:{
-						exitmenu = true;
+						system("CLS");
+						cout << "Thanks for playing! See you soon :)\n";
+						system("pause");
+						return 0;
 					}break;
 				}
 			}
